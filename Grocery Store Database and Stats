@@ -1,0 +1,32 @@
+--create a grocery store database
+
+CREATE TABLE grocery_store (id INTEGER PRIMARY KEY, item TEXT, department INTEGER, price INTEGER, how_many_sold INTEGER);
+
+INSERT INTO grocery_store VALUES (1, "apples", "produce", 2.99, 150);
+INSERT INTO grocery_store VALUES (2, "lettuce", "produce", 3.99, 102);
+INSERT INTO grocery_store VALUES (3, "chicken", "meat", 13.99, 350);
+INSERT INTO grocery_store VALUES (4, "hot dogs", "meat", 5.99, 125);
+INSERT INTO grocery_store VALUES (5, "hummus", "deli", 6.99, 80);
+INSERT INTO grocery_store VALUES (6, "cereal", "pantry", 6.99, 225);
+INSERT INTO grocery_store VALUES (7, "muffins", "pantry", 5.99, 102);
+INSERT INTO grocery_store VALUES (8, "bread", "bakery", 3.99, 225);
+INSERT INTO grocery_store VALUES (9, "pie", "bakery", 10.99, 72);
+INSERT INTO grocery_store VALUES (10, "eggs", "eggs", 5.99, 102);
+INSERT INTO grocery_store VALUES (11, "milk", "dairy", 4.99, 225);
+INSERT INTO grocery_store VALUES (12, "yogurt", "dairy", 7.99, 132);
+INSERT INTO grocery_store VALUES (13, "butter", "dairy", 4.99, 257);
+INSERT INTO grocery_store VALUES (14, "gum", "candy", 2.99, 332);
+INSERT INTO grocery_store VALUES (15, "sugar", "baking", 4.99, 222);
+
+--display the database ordered by price.
+SELECT * FROM grocery_store
+ORDER BY price asc;
+
+--what are the 5 most popular items?
+SELECT item, how_many_sold
+FROM grocery_store
+order by how_many_sold desc
+limit 5;
+
+--how many items in total sold?
+SELECT SUM(how_many_sold) FROM grocery_store
